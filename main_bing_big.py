@@ -6,10 +6,14 @@ from bs4 import BeautifulSoup
 import urllib.request
 import requests
 import os
+import time
 
 
 url = 'https://bing.ioliu.cn/'
-pic_path="./pic"
+t1 =time.strftime("%Y%m%d", time.localtime())
+print(t1)
+pic_path="./"+t1;
+
 
 if(os.path.exists(pic_path)):
     print(pic_path +" exists...")

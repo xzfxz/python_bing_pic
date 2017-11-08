@@ -3,10 +3,9 @@
 
 from bs4 import BeautifulSoup
 import urllib.request
-import requests
 import re;
 import os;
-
+import time;
 pic_path="./pic"
 
 if(os.path.exists(pic_path)):
@@ -43,21 +42,6 @@ for item in imgList:
 
 print(pic_url);
 
-for item in pic_url:
-    print(item);
-
-
-for i in range(len(pic_url)):
-    url = pic_url[i];
-    url = pre+url;
-    pic = requests.get(url, timeout=10)
-    string = 'pictures//' + str(i) + '.jpg'
-    print(string);
-    fp = open(string,'wb')
-    fp.write(pic.content)
-    fp.close()
-    i += 1
-
 # （1）find_all( name , attrs , recursive , text , **kwargs )
 #name 参数可以查找所有名字为 name 的tag,字符串对象会被自动忽略掉
 #tag 获取属性，可以通过get(属性名)，例如imgList[i].get('src')
@@ -69,3 +53,17 @@ for i in range(len(pic_url)):
 #     print(item);
 #     print(item.get('class'))
 #     print(item.string)
+
+t1 = time.time()
+print(t1)
+#获取当前时间戳
+t2 = time.localtime()
+print(t2)
+#当前时间的struct_time形式
+
+#当前时间的字符串形式
+t3=time.ctime()
+print(t3)
+
+t4 =time.strftime("%Y%m%d", time.localtime())
+print(t4)
