@@ -1,12 +1,20 @@
 
 #!/usr/bin/env python3
-#获取bing首页小图片的方法
+#获取bing首页小图片的方法 small
 
 from bs4 import BeautifulSoup
 import urllib.request
 import requests
-
+import os
 url = 'https://bing.ioliu.cn/'
+
+pic_path="./pic"
+
+if(os.path.exists(pic_path)):
+    print(pic_path +" exists...")
+else:
+    os.mkdir(pic_path)
+
 
 try:
     response = urllib.request.urlopen(url)
@@ -23,7 +31,7 @@ try:
     for i in range(len(pic_url)):
         url = pic_url[i];
         pic = requests.get(url,timeout=10)
-        jpg = 'pictures//' + str(i) + '.jpg'
+        jpg = pic_path+os.sep + "s_"+str(i) + '.jpg'
         fp = open(jpg, 'wb')
         fp.write(pic.content)
         fp.close()

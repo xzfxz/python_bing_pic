@@ -5,11 +5,20 @@ from bs4 import BeautifulSoup
 import urllib.request
 import requests
 import re;
-pre="http://192.168.12.164:8080";
+import os;
+
+pic_path="./pic"
+
+if(os.path.exists(pic_path)):
+    print(pic_path +" exists...")
+else:
+    os.mkdir(pic_path)
+
+pre="http://www.baidu.com";
 # BeautifulSoup(markup,"html5lib");
 # url = 'https://bing.ioliu.cn/'
 # url = 'http://python.org/';
-url = "http://192.168.12.164:8080/oracsmall/mall/index"
+url = "http://www.baidu.com/oracsmall/mall/index"
 
 response = urllib.request.urlopen(url)
 the_page = response.read()
