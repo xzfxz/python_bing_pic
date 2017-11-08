@@ -1,0 +1,25 @@
+#该工程使用python3 以及beautilfulsoap4实现的图片下载
+
+#下载 beautifulsoup 的tar包
+https://www.crummy.com/software/BeautifulSoup/#Download
+
+# 安装 beautifulsoup
+sudo python3 setup.py install
+
+#安装的过程中需要如下的依赖的setuptools
+#setuptools github homePage
+https://github.com/pypa/setuptools
+
+# 安装setuptools需要使用pip工具，因此首先安装pip
+
+# install pip
+sudo python3 get-pip.py
+
+
+# install setuptools
+sudo pip install -U pip setuptools
+
+#当然也可以使用pip在线安装beautifulsoup，方法如下：
+ easy_install beautifulsoup4
+
+ pip install beautifulsoup4
