@@ -4,6 +4,7 @@
 https://www.crummy.com/software/BeautifulSoup/#Download
 
 # 安装 beautifulsoup
+# 解压如上的tar包，进入该目录，执行如下语句
 sudo python3 setup.py install
 
 #安装的过程中需要如下的依赖的setuptools
@@ -12,7 +13,7 @@ https://github.com/pypa/setuptools
 
 # 安装setuptools需要使用pip工具，因此首先安装pip
 
-# install pip
+# install pip，通过git clone https://github.com/pypa/setuptools.git 获取如上的代码，进入该目录，执行如下语句
 sudo python3 get-pip.py
 
 
