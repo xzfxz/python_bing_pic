@@ -3,9 +3,9 @@
 
 from bs4 import BeautifulSoup
 import urllib.request
-import re;
-import os;
-import time;
+import re
+import os
+import time
 pic_path="./pic"
 
 if(os.path.exists(pic_path)):
@@ -13,44 +13,44 @@ if(os.path.exists(pic_path)):
 else:
     os.mkdir(pic_path)
 
-pre="http://www.baidu.com";
-# BeautifulSoup(markup,"html5lib");
+pre="http://www.baidu.com"
+# BeautifulSoup(markup,"html5lib")
 # url = 'https://bing.ioliu.cn/'
-# url = 'http://python.org/';
+# url = 'http://python.org/'
 url = "http://www.baidu.com/oracsmall/mall/index"
 
 response = urllib.request.urlopen(url)
 the_page = response.read()
 # print(the_page.decode("utf8"))
 
-soup = BeautifulSoup(the_page,"html5lib")
+soup = BeautifulSoup(the_page,"html")
 
-text = soup.prettify();
+text = soup.prettify()
 #print(text)
 
-r = re.compile("^d");
+r = re.compile("^d")
 
-div = soup.find_all(r);
-print(len(div));
+div = soup.find_all(r)
+print(len(div))
 
 imgList = soup.find_all('img')
 
 pic_url=[]
 
 for item in imgList:
-    pic_url.append(item.get('src'));
+    pic_url.append(item.get('src'))
 
-print(pic_url);
+print(pic_url)
 
 # （1）find_all( name , attrs , recursive , text , **kwargs )
 #name 参数可以查找所有名字为 name 的tag,字符串对象会被自动忽略掉
 #tag 获取属性，可以通过get(属性名)，例如imgList[i].get('src')
 #tag 获取标签内容，可以通过string方法获取
 
-# li=soup.find_all('li');
-# print(len(li));
+# li=soup.find_all('li')
+# print(len(li))
 # for item in li:
-#     print(item);
+#     print(item)
 #     print(item.get('class'))
 #     print(item.string)
 
